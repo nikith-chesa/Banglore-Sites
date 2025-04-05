@@ -4,7 +4,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 // imports
 const Lands = require("./routes/LandRoutes");
-const Contact = require("./routes/UserRoutes");
+const User = require("./routes/UserRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/v1", Lands);
-app.use("/api/v1", Contact);
+app.use("/api/v1", User);
 
 
 // Server

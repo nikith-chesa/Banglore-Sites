@@ -2,6 +2,8 @@ const Contact = require('../models/ContactModules');
 const User = require('../models/UserModule');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const crypto = require('crypto');
+const sendResetEmail = require('../utils/sendEmail');
 
 exports.register = async (req, res) => {
 
@@ -65,10 +67,61 @@ exports.loginUser = async (req, res) => {
 }
 
 
+exports.forgotPassword = async (req, res) => {
+    const { phone } = req.body;
+
+    try {
+        const user = await User.findOne({ phone });
+        console.log(user.email);
+        if (!user) {
+            return res.status(404).json({ message: "User not found with this phone number" });
+        }
+
+        const resetToken = crypto.randomBytes(32).toString("hex");
+        const expiryTime = Date.now() + 1000 * 60 * 15
+
+        user.resetToken = resetToken;
+        user.resetTokenExpiry = expiryTime;
+        await user.save();
+
+        const resetLink = `http://localhost:5000/api/v1/auth/resetPassword${resetToken}`;
+        await sendResetEmail(user.email, resetLink);
 
 
+        res.status(200).json({ message: "We have sent a reset link to your email." });
 
+    } catch (error) {
+        res.status(500).json({ message: "Error in forgot password", error });
+    }
+}
 
+exports.resetPassword = async (req, res) => {
+    const { token } = req.params;
+    const { newPassword } = req.body;
+
+    try {
+        const user = await User.findOne({
+            resetToken: token,
+            resetTokenExpiry: { $gt: Date.now() }
+        })
+
+        if (!user) {
+            return res.status(400).json({ message: "Invalid or expired token" });
+        }
+        const hashedpassword = await bcrypt.hash(newPassword, 10);
+
+        user.password = hashedpassword;
+        user.resetToken = undefined;
+        user.resetTokenExpiry = undefined;
+
+        await user.save();
+
+        res.status(200).json({ message: "Password reset successful" });
+
+    } catch (error) {
+        res.status(500).json({ message: "Error in resetting password", error });
+    }
+}
 
 
 
