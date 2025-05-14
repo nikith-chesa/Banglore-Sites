@@ -1,6 +1,6 @@
 import "./App.css";
-// import CircularTextLoader from './components/CircularTextLoader';
-// import MagButton from './components/MagButton';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import DreamPlots from "./components/DreamPlots";
@@ -10,33 +10,23 @@ import Construction from "./components/Construction";
 import Footer from "./components/Footer";
 import LandDetailed from "./components/LandDetailed";
 import LandList from "./components/LandList";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <>
-      {/*   
-  <CircularTextLoader
-    text="BangloreSites"
-    onHover="speedUp"
-    spinDuration={20}
-    className="custom-class"
-  /> */}
-      {/* <MagButton
-  padding={10}
-  disabled={false}
-  magnetStrength={1}>
-  <p>Pull ME</p>
-  </MagButton> */}
+    <Router>
       <NavBar />
-      <Hero></Hero>
-      <DreamPlots />
-      <OtoB />
-      <Contact />
-      <Construction />
-      <LandDetailed />
-      <LandList />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dream-plots" element={<DreamPlots />} />
+        <Route path="/oto-business" element={<OtoB />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/construction" element={<Construction />} />
+        <Route path="/land-details/:id" element={<LandDetailed />} />
+        <Route path="/lands" element={<LandList />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
