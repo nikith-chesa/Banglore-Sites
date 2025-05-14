@@ -1,6 +1,6 @@
-import React from 'react';
-import { CheckCircle } from 'lucide-react';
-import constructionImg from '../assets/construction.png'; // adjust path accordingly
+import React from "react";
+import { CheckCircle } from "lucide-react";
+import constructionImg from "../assets/construction.png"; // adjust path accordingly
 
 const Construction = () => {
   return (
@@ -21,9 +21,10 @@ const Construction = () => {
 
       {/* Description */}
       <p className="max-w-2xl mx-auto text-gray-800 mb-6 text-[15px] leading-relaxed">
-        "Not just land, we help you build your dream home too! Our expert construction team ensures
-        quality, affordability, and timely delivery. From planning to execution, we provide
-        end-to-end solutions for residential and commercial projects."
+        "Not just land, we help you build your dream home too! Our expert
+        construction team ensures quality, affordability, and timely delivery.
+        From planning to execution, we provide end-to-end solutions for
+        residential and commercial projects."
       </p>
 
       {/* Checklist */}
@@ -51,9 +52,11 @@ const Construction = () => {
       </div>
 
       {/* Contact Button */}
-      <button className="bg-[#7a9b00] px-6 py-2 text-sm font-medium rounded text-black hover:opacity-90 shadow">
-        Contact
-      </button>
+      <a href="#contact">
+        <button className="bg-[#7a9b00] px-6 py-2 text-sm font-medium rounded text-black hover:opacity-90 shadow">
+          Contact
+        </button>
+      </a>
     </div>
   );
 };

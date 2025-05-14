@@ -1,6 +1,6 @@
 import React from "react";
 import LandCard from "./LandCard";
-
+import { Link } from "react-router-dom";
 const DreamPlots = () => {
   return (
     <div className="py-10 px-4 my-10">
@@ -19,10 +19,11 @@ const DreamPlots = () => {
         </section>
       </div>
       <div className="flex justify-center items-center mt-10">
-      <button className="bg-[#7a9b00] hover:bg-lime-800 text-black font-semibold px-6 py-2 rounded-md flex items-center gap-2 transition">
-  View More <span className="text-xl">→</span>
-</button>
-
+        <Link to="/lands">
+          <button className="bg-[#7a9b00] hover:bg-lime-800 text-black font-semibold px-6 py-2 rounded-md flex items-center gap-2 transition">
+            View More <span className="text-xl">→</span>
+          </button>
+        </Link>
       </div>
     </div>
   );
