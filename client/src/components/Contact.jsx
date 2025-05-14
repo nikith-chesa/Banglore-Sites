@@ -1,14 +1,20 @@
-import React from 'react';
-import contactImg from '../assets/pexels-serjosoza-30117022 1.png'; // adjust path accordingly
-
+import React from "react";
+import contactImg from "../assets/pexels-serjosoza-30117022 1.png"; // adjust path accordingly
+import { showSuccess} from "../utils/toast";
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    showSuccess("Successfully submitted");
+  };
+
   return (
     <div id="contact" className="bg-[#f4f3eb] py-10 px-4">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        
         {/* Left - Form */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-1">Contact us / Enquiry</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-1">
+            Contact us / Enquiry
+          </h2>
           <p className="text-sm text-gray-500 mb-6">no unwanted calls or sms</p>
           <form className="space-y-4">
             {/* Name Fields */}
@@ -61,7 +67,9 @@ const Contact = () => {
 
             {/* Message */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Message
+              </label>
               <textarea
                 placeholder="Leave a message"
                 rows={3}
@@ -73,6 +81,7 @@ const Contact = () => {
             <button
               type="submit"
               className="bg-[#7a9b00] text-black font-semibold px-6 py-2 rounded shadow hover:opacity-90 transition"
+              onClick={handleSubmit}
             >
               SUBMIT
             </button>

@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import logo from "../assets/Add a heading (1).png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-
+import AuthModal from "./AuthModel";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Buy", path: "/lands" },
@@ -13,7 +13,7 @@ const navLinks = [
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [authType, setAuthType] = useState(null);
   return (
     <nav className="w-full bg-white shadow-md fixed top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -47,11 +47,17 @@ const NavBar = () => {
               </Link>
             )
           )}
-          <button className="text-white bg-black py-1 px-4 rounded-xl border-2 border-black hover:border-white transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+          <button
+            onClick={() => setAuthType("login")}
+            className="text-white bg-black py-1 px-4 rounded-xl border-2 border-black hover:border-white transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+          >
             Login
           </button>
-          <button className="border-2 border-black bg-white text-black py-1 px-4 rounded-xl hover:border-black transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl cursor-pointer">
-            Signin
+          <button
+            onClick={() => setAuthType("signup")}
+            className="border-2 border-black bg-white text-black py-1 px-4 rounded-xl hover:border-black transform transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+          >
+            SignUp
           </button>
         </div>
 
@@ -62,7 +68,10 @@ const NavBar = () => {
           </button>
         </div>
       </div>
-
+      {/* Conditionally Render Modal */}
+      {authType && (
+        <AuthModal type={authType} onClose={() => setAuthType(null)} />
+      )}
       {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden bg-white px-4 pt-2 pb-4 shadow">

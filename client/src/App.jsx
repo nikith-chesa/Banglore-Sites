@@ -16,9 +16,12 @@ import AddLand from "./components/Admin/AddLand";
 import AllLandList from "./components/Admin/AllLandList";
 import AllUserDetails from "./components/Admin/AllUserDetails";
 import Analytics from "./components/Analytics";
+import { ToastContainer } from "react-toastify";
+
 function App() {
   return (
     <Router>
+      <ToastContainer />
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,6 +32,7 @@ function App() {
         <Route path="/land-details" element={<LandDetailed />} />
         <Route path="/lands" element={<LandList />} />
         <Route path="/admin" element={<Dashboard />}>
+          <Route index element={<AddLand />} />
           <Route path="add-land" element={<AddLand />} />
           <Route path="land-list" element={<AllLandList />} />
           <Route path="user-details" element={<AllUserDetails />} />
