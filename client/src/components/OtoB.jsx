@@ -1,8 +1,8 @@
-import React from 'react';
-import cornerImg from '../assets/Corner-Plots-In-Mysore 1.png';
-import EastFSImg from '../assets/74769711_3_hatsAppImage20240905at13.05.311_180_240 1.png';
-import GatedImg from '../assets/1714032894533PROXY-3faf3682 1.png';
-
+import React from "react";
+import cornerImg from "../assets/Corner-Plots-In-Mysore 1.png";
+import EastFSImg from "../assets/74769711_3_hatsAppImage20240905at13.05.311_180_240 1.png";
+import GatedImg from "../assets/1714032894533PROXY-3faf3682 1.png";
+import { Link } from "react-router-dom";
 const OtoB = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center mt-10 px-4">
@@ -27,35 +27,46 @@ const OtoB = () => {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          {/* Card 1 */}
-          <div className="w-full max-w-[350px] text-center">
-            <img
-              src={cornerImg}
-              alt="Corner Plots"
-              className="rounded-xl w-full h-[160px] object-cover shadow"
-            />
-            <p className="mt-3 text-sm font-medium text-gray-800">Corner Plots</p>
-          </div>
+          <Link to="/lands" className="w-full max-w-[350px] text-center">
+            <div>
+              <img
+                src={cornerImg}
+                alt="Corner Plots"
+                className="rounded-xl w-full h-[160px] object-cover shadow"
+              />
+              <p className="mt-3 text-sm font-medium text-gray-800">
+                Corner Plots
+              </p>
+            </div>
+          </Link>
 
           {/* Card 2 */}
-          <div className="w-full max-w-[350px] text-center">
-            <img
-              src={EastFSImg}
-              alt="East Facing Plots"
-              className="rounded-xl w-full h-[160px] object-cover shadow"
-            />
-            <p className="mt-3 text-sm font-medium text-gray-800">East Facing Plots</p>
-          </div>
+          <Link to="/lands" className="w-full max-w-[350px] text-center">
+            <div>
+              <img
+                src={EastFSImg}
+                alt="East Facing Plots"
+                className="rounded-xl w-full h-[160px] object-cover shadow"
+              />
+              <p className="mt-3 text-sm font-medium text-gray-800">
+                East Facing Plots
+              </p>
+            </div>
+          </Link>
 
           {/* Card 3 */}
-          <div className="w-full max-w-[350px] text-center">
-            <img
-              src={GatedImg}
-              alt="Gated Plots"
-              className="rounded-xl w-full h-[160px] object-cover shadow"
-            />
-            <p className="mt-3 text-sm font-medium text-gray-800">Gated Plots</p>
-          </div>
+          <Link to="/lands" className="w-full max-w-[350px] text-center">
+            <div>
+              <img
+                src={GatedImg}
+                alt="Gated Plots"
+                className="rounded-xl w-full h-[160px] object-cover shadow"
+              />
+              <p className="mt-3 text-sm font-medium text-gray-800">
+                Gated Plots
+              </p>
+            </div>
+          </Link>
         </div>
       </section>
     </div>

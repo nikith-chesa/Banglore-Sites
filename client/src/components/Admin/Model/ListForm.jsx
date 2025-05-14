@@ -58,7 +58,7 @@ const ListForm = () => {
             <h2 className="text-2xl font-semibold">List a New Land</h2>
 
             {/* Input Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
                     'title',
                     'location',

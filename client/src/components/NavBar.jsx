@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../../public/Add a heading (1).png";
+import logo from "../assets/Add a heading (1).png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Buy", path: "/lands" },
-  { name: "Explore", path: "/dream-plots" },
   { name: "Contact", path: "/#contact" },
   { name: "Blog", path: "/blog" },
 ];
@@ -19,7 +18,10 @@ const NavBar = () => {
     <nav className="w-full bg-white shadow-md fixed top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-blue-600 bg-black rounded-full overflow-hidden">
+        <Link
+          to="/"
+          className="text-xl font-bold text-blue-600 bg-black rounded-full overflow-hidden"
+        >
           <img src={logo} alt="logo" width={50} />
         </Link>
 
