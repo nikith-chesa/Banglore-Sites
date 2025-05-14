@@ -1,6 +1,9 @@
 import React from 'react'
 import hero_bg from '../assets/hero-bg.png';
 import SearchBar from './SearchBar';
+import Contact from './Contact';
+import OtoB from './OtoB';
+import DreamPlots from './DreamPlots';
 const Hero = () => {
     return (
         <section className="relative w-full h-[90vh] bg-cover bg-center"

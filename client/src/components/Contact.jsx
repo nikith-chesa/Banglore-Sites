@@ -3,7 +3,7 @@ import contactImg from '../assets/pexels-serjosoza-30117022 1.png'; // adjust pa
 
 const Contact = () => {
   return (
-    <div className="bg-[#f4f3eb] py-10 px-4">
+    <div id="contact" className="bg-[#f4f3eb] py-10 px-4">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         
         {/* Left - Form */}
