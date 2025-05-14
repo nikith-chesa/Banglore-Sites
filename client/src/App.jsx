@@ -39,6 +39,20 @@ function App() {
           <Route path="analytics" element={<Analytics />} />
         </Route>
       </Routes>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/919999999999"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-12 right-5 z-50"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp"
+          className="w-12 h-12 hover:scale-110 transition-transform"
+        />
+      </a>
       <Footer />
     </Router>
   );

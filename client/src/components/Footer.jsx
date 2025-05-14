@@ -1,8 +1,8 @@
-import React from 'react';
-import whatsapp from '../assets/square-whatsapp-brands.svg';
-import facebook from '../assets/square-facebook-brands.svg';
-import instagram from '../assets/square-instagram-brands.svg';
-
+import React from "react";
+import facebook from "../assets/square-facebook-brands.svg";
+import instagram from "../assets/square-instagram-brands.svg";
+import logo from "../assets/Add a heading (1).png";
+import { Link } from "react-router-dom";
 // import { Instagram, Twitter, Facebook, Whatsapp } from 'lucide-react';
 
 const Footer = () => {
@@ -49,15 +49,16 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto mt-6 gap-4">
         {/* Branding */}
         <div className="flex items-center gap-2">
-          <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-            BS
-          </div>
-          <span className="text-black font-medium">BS</span>
+          <Link
+            to="/"
+            className="text-xl font-bold text-blue-600 bg-black rounded-full overflow-hidden"
+          >
+            <img src={logo} alt="logo" width={50} />
+          </Link>
         </div>
 
         {/* Social icons */}
         <div className="flex justify-center items-center gap-4 text-black">
-          <img src={whatsapp} alt="" width={30} />
           <img src={facebook} alt="" width={30} />
           <img src={instagram} alt="" width={30} />
         </div>
