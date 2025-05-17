@@ -17,7 +17,7 @@ import AllLandList from "./components/Admin/AllLandList";
 import AllUserDetails from "./components/Admin/AllUserDetails";
 import Analytics from "./components/Analytics";
 import { ToastContainer } from "react-toastify";
-
+import BlogPage from "./components/BlogPage";
 function App() {
   return (
     <Router>
@@ -38,6 +38,7 @@ function App() {
           <Route path="user-details" element={<AllUserDetails />} />
           <Route path="analytics" element={<Analytics />} />
         </Route>
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
 
       {/* WhatsApp Floating Button */}
