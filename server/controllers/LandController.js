@@ -30,9 +30,6 @@ exports.getTopLands = async (req, res) => {
 exports.addLand = async (req, res) => {
     try {
         const { title, location, price, persqft, area, propertyType, approval, facing, ownerShip, amenitiesNearby, roadinfront, waterandelectricity, distancefromL, emiloan } = req.body;
-        if (!title ||!location||! price ||!persqft ||!area ||!propertyType||! approval ||!facing ||!ownerShip ||!amenitiesNearby ||!roadinfront ||!waterandelectricity ||!distancefromL ||!emiloan ) {
-           return res.status(400).json({message:"Land details are missing"}) 
-        }
         const landDetails = { title, location, price, persqft, area, propertyType, approval, facing, ownerShip, amenitiesNearby, roadinfront, waterandelectricity, distancefromL, emiloan }
         await Lands.create(landDetails);
        return res.status(200).json({ message: "Successfully listed land" });

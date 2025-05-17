@@ -10,12 +10,24 @@ const DreamPlots = () => {
         </h1>
 
         <section className="flex flex-wrap gap-6 justify-center items-center">
-          <LandCard />
-          <LandCard />
-          <LandCard />
-          <LandCard />
-          <LandCard />
-          <LandCard />
+          <Link to={"/lands"}>
+            <LandCard />
+          </Link>
+          <Link to={"/lands"}>
+            <LandCard />
+          </Link>
+          <Link to={"/lands"}>
+            <LandCard />
+          </Link>
+          <Link to={"/lands"}>
+            <LandCard />
+          </Link>
+          <Link to={"/lands"}>
+            <LandCard />
+          </Link>
+          <Link to={"/lands"}>
+            <LandCard />
+          </Link>
         </section>
       </div>
       <div className="flex justify-center items-center mt-10">
